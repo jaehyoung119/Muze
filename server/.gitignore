@@ -1,0 +1,17 @@
+# dependencies
+node_modules
+
+# env file
+.env
+
+# build output
+dist
+
+# prisma
+/generated/prisma
+prisma/dev.db  # 로컬 sqlite 등 있을 경우
+
+# logs
+logs
+*.log
+npm-debug.log*

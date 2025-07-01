@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int        @id @default(autoincrement())
+  email         String     @unique
+  password      String
+  nickname      String
+  mbti_genre    String
+  profile_image String
+  intro         String?
+  points        Int        @default(0)
+  created_at    DateTime   @default(now())
+  playlists     Playlist[]
+  songs         Song[]
+}
+
+model Song {
+  id                 Int            @id @default(autoincrement())
+  title              String
+  artist             String
+  genre              String
+  generated_by_ai    Boolean
+  created_by_user_id Int
+  created_at         DateTime       @default(now())
+  playlists          PlaylistSong[]
+  createdBy          User           @relation(fields: [created_by_user_id], references: [id])
+}
+
+model Playlist {
+  id          Int            @id @default(autoincrement())
+  user_id     Int
+  title       String
+  description String?
+  cover_image String?
+  is_public   Boolean        @default(true)
+  created_at  DateTime       @default(now())
+  user        User           @relation(fields: [user_id], references: [id])
+  songs       PlaylistSong[]
+}
+
+model PlaylistSong {
+  id          Int      @id @default(autoincrement())
+  playlist_id Int
+  song_id     Int
+  playlist    Playlist @relation(fields: [playlist_id], references: [id])
+  song        Song     @relation(fields: [song_id], references: [id])
+}
