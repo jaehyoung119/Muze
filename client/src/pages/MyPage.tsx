@@ -23,7 +23,7 @@ function MePage() {
         );
         setUser(res.data);
       } catch (err) {
-        console.error("유저 정보를 불러올 수 없습니다");
+        console.error("유저 정보를 불러올 수 없습니다", err);
       }
     };
 
@@ -31,8 +31,8 @@ function MePage() {
   }, []);
 
   const handleLogout = () => {
-    logout(); // Zustand 상태 초기화 + 토큰 제거
-    navigate("/login"); // 로그인 페이지로 이동
+    logout();
+    navigate("/login");
   };
 
   return (

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import MyPage from "./pages/MyPage";
 import { useAuthStore } from "./stores/authStore";
+import "./styles/globals.css";
 
 function App() {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
