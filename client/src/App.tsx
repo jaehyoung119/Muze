@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
+import MyPage from "./pages/MyPage";
 import { useAuthStore } from "./stores/authStore";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           </div>
         }
       />
+      <Route path="/me" element={<MyPage />} />
     </Routes>
   );
 }
