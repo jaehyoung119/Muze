@@ -15,7 +15,9 @@ export default function MainLayout({
       <div className="flex-1 flex flex-col bg-white">
         <Header />
 
-        <main className="flex-1 overflow-y-auto p-8">{children}</main>
+        <main className="flex-1 overflow-y-auto min-h-screen flex items-center justify-center bg-white">
+          {children}
+        </main>
       </div>
     </div>
   );
