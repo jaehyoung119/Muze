@@ -1,10 +1,5 @@
-import Hero from "../components/home/hero";
-import MainLayout from "../components/layout/MainLayout";
+import Hero from "../components/home/Hero";
 
 export default function HomePage() {
-  return (
-    <MainLayout>
-      <Hero />
-    </MainLayout>
-  );
+  return <Hero />;
 }

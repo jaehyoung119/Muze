@@ -1,3 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* === Roboto Flex (Variable Font) === */
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("../assets/fonts/RobotoFlex-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900; /* Variable font → 모든 굵기 지원 */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Flex";
+  src: url("../assets/fonts/RobotoFlex-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* === Noto Sans KR === */
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("../assets/fonts/NotoSansKR-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("../assets/fonts/NotoSansKR-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Tailwind v4: font-sans 재정의 === */
+@theme {
+  --font-sans: "Roboto Flex", "Noto Sans KR", ui-sans-serif, system-ui,
+    -apple-system, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
+}
+
+/* === 전역 적용 === */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-sans);
+  font-size: 14px; /* 전체 기본 크기 14px */
+  font-weight: 300; /* 얇은 두께 */
+  color: var(--g-text-primary);
+}
+
+:root {
+  --g-text-primary: rgba(60, 64, 67, 0.87); /* on-surface */
+  --g-text-secondary: rgba(60, 64, 67, 0.6); /* on-surface-variant */
+  --g-text-disabled: rgba(60, 64, 67, 0.38); /* disabled */
+}
