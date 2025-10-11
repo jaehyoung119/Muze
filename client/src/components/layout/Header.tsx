@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../../assets/Muze.png";
 
 function VersionSelect() {
   const [open, setOpen] = useState(false);
@@ -52,10 +53,17 @@ function VersionSelect() {
 
 export default function Header() {
   return (
-    <header className="w-full h-full px-10 py-2 flex items-center justify-between">
-      {/* 왼쪽: 로고 + 버전 */}
+    <header className="w-full h-full px-5 py-2 flex items-center justify-between">
+      {/* 왼쪽: 로고 + 텍스트 + 버전 */}
       <div className="flex items-center h-full gap-3">
-        <h1 className="text-2xl font-medium">Muze</h1>
+        <div className="flex items-center gap-1">
+          <img
+            src={logo}
+            alt="Muze logo"
+            className="w-12 h-12 object-contain translate-y-[2px]"
+          />
+          <h1 className="text-2xl font-medium">Muze</h1>
+        </div>
         <VersionSelect />
       </div>
 

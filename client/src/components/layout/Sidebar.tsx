@@ -5,7 +5,6 @@ export default function Sidebar() {
     <aside className="h-full p-6 flex flex-col justify-between">
       {/* 상단 영역 */}
       <div className="space-y-8">
-        {/* 햄버거 */}
         <div className="flex items-center justify-between">
           <button
             className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5"
